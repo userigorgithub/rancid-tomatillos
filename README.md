@@ -21,7 +21,7 @@ Rancid Tomatillos is an application that allows a user to browse through a list 
 
 ## Deployed Page
 
-You can access deployed application [HERE!](https://nameless-dusk-91852.herokuapp.com/)
+You can access deployed application [HERE!](https://userigorgithub.github.io/rancid-tomatillos/)
 
 ## Getting Started with Create React App
 
