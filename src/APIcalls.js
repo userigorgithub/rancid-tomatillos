@@ -1,5 +1,5 @@
 const fetchData = (path) => {
-  return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies${path}`)
+  return fetch(`https://rancid-tomatillos-api-l5bh.onrender.com/api/v1/movies${path}`)
 }
 
 export { fetchData };

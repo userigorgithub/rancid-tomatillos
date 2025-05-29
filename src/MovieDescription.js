@@ -25,34 +25,34 @@ class MovieDescription extends Component {
         return response.json()
       }
     })
-    .then(data => this.setState({movie: data.movie}))
+    .then(data => this.setState({movie: data}))
     .catch(error => {
       console.log('Something went wrong, please refresh!')
       this.setState({error: 'Something went wrong, please refresh!'})
     })
-    this.fetchTrailerData()
+    // this.fetchTrailerData()
   }
 
-  fetchTrailerData = () => {
-    fetchData(`/${this.props.id}/videos`)
-    .then(response => {
-      if (!response.ok) {
-        console.log('Could not load video trailer, please refresh!')
-      } else {
-        return response.json()
-      }
-    })
-    .then(data =>  {
-      if(data.videos[0].key) {
-        this.setState({videos: data.videos[0]})
-      } else if (!data.videos[0].key) {
-        this.setState({videos: 'about:none'})
-      }
-    })
-    .catch(error => {
-      console.log('Could not load video trailer, please refresh!')
-    })
-  }
+  // fetchTrailerData = () => {
+  //   fetchData(`/${this.props.id}/videos`)
+  //   .then(response => {
+  //     if (!response.ok) {
+  //       console.log('Could not load video trailer, please refresh!')
+  //     } else {
+  //       return response.json()
+  //     }
+  //   })
+  //   .then(data =>  {
+  //     if(data.videos[0].key) {
+  //       this.setState({videos: data.videos[0]})
+  //     } else if (!data.videos[0].key) {
+  //       this.setState({videos: 'about:none'})
+  //     }
+  //   })
+  //   .catch(error => {
+  //     console.log('Could not load video trailer, please refresh!')
+  //   })
+  // }
 
   render() {
     if (!this.state.error) {
@@ -68,8 +68,8 @@ class MovieDescription extends Component {
             <div className='movie-details-box'>
               <p className='desc-title'>Title: {this.state.movie.title}</p><br/>
               <p className='desc-overview'>Overview: {this.state.movie.overview}</p><br/>
-              <p className='desc-runtime'>Runtime: {this.state.movie.runtime} mins</p><br/>
-              <p className='desc-rating'>Average Rating: {Math.round(this.state.movie.average_rating)}/10</p><br/>
+              <p className='desc-runtime'>Genre: {this.state.movie.genre_ids}</p><br/>
+              <p className='desc-rating'>Popularity: {Math.round(this.state.movie.popularity)}</p><br/>
               <p className='desc-release'>Release Date: {this.state.movie.release_date}</p><br/>
             <Link to='/'>
               <button className='return-button'>Return</button>
