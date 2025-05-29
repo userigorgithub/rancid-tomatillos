@@ -24,7 +24,7 @@ class App extends Component {
         return response.json()
       }
     })
-    .then(data => this.setState({movies: data.movies}))
+    .then(data => this.setState({movies: data}))
     .catch(error => {
       console.log('Something went wrong, please refresh!')
       this.setState({error: 'Something went wrong, please refresh!'})
